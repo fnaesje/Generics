@@ -14,6 +14,6 @@ public class GenericBubbleSort <E extends Comparable> {
 		          needNextPass = true; // Next pass still needed
 		        }
 		      }
-		    }
+		}
 	}
 }
