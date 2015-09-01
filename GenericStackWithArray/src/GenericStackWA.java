@@ -21,7 +21,7 @@ public class GenericStackWA <E> {
 		elements[size++] = value;
 	}
 	
-	public int capacity() { return elements.length;} 
+	public int capacity() {return elements.length;} // Introduced during testing
 	
 	public E peek() {
 		return elements[size-1];
