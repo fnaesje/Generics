@@ -12,7 +12,7 @@ public class GenericStackWA <E> {
 		elements = (E[]) new Object[capacity];
 	}
 	
-	void push(E value) {
+	public void push(E value) {
 		if (size >= elements.length) {
 		      E[] temp = (E[])new Object[elements.length * 2];
 		      System.arraycopy(elements, 0, temp, 0, elements.length);
@@ -21,11 +21,13 @@ public class GenericStackWA <E> {
 		elements[size++] = value;
 	}
 	
-	E peek() {
+	public int capacity() { return elements.length;} 
+	
+	public E peek() {
 		return elements[size-1];
 	}
 	
-	E pop() {
+	public E pop() {
 		return elements[--size];
 	}
 	

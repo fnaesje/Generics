@@ -47,5 +47,15 @@ public class GenericStackWATest {
 		stack.pop();
 		assertThat("Stack not empty but should be", stack.isEmpty(), is(true));
 	}
+	@Test
+	public void pushOverCapacity_ShouldWorkAndDoubleCapacity() {
+		GenericStackWA<Integer> stackWithCapacityGiven = new GenericStackWA(3);
+		assertThat(stackWithCapacityGiven.capacity(), equalTo(3));
+		stackWithCapacityGiven.push(1);
+		stackWithCapacityGiven.push(2);
+		stackWithCapacityGiven.push(3);
+		stackWithCapacityGiven.push(4);
+		assertThat(stackWithCapacityGiven.capacity(), equalTo(6));
+	}
 	
 }
