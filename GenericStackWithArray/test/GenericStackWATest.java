@@ -13,19 +13,19 @@ public class GenericStackWATest {
 	}
 	@Test
 	public void initialStack_StackShouldBeEmpty() {
-		
 		assertTrue("Was not empty initially", stack.isEmpty());
 	}
+	
 	@Test
-	public void pushOneValue_StackShouldNotBeEmpty() {
+	public void pushAValue_thenStackShouldNotBeEmpty() {
 		stack.push(1);
-		assertFalse("Was empty after one push", stack.isEmpty());
+		assertFalse(stack.isEmpty());
 	}
 
 	@Test
-	public void toString_pushOneValue_ShouldReturnAStringWithSameValue() {
+	public void peekafterPush_ShouldReturnSameValue() {
 		stack.push(1);
-		assertThat("Did not return 1", stack.toString(), equalTo("1"));
+		assertThat(stack.peek(), is(equalTo(1)));
 	}
 	
 	@Test
@@ -35,17 +35,17 @@ public class GenericStackWATest {
 		assertTrue("Was not empty after push and pop", stack.isEmpty());
 	}
 	@Test
-	public void pushOneAndTwo_ShouldReturnOneAndTwoAsString() {
+	public void pushTwoValues_ShouldReturnLastPushed() {
 		stack.push(1);
 		stack.push(2);
-		assertThat("Did not return 2,1", stack.toString(), is(equalTo("2,1")));
+		assertThat("Did not pop last value", stack.pop(), is(equalTo(2)));
 	}
 	
 	@Test
-	public void pushAndPop_ShouldReturnEmptyString() {
+	public void pushAndPop_ShouldResultInEmptyStack() {
 		stack.push(1);
 		stack.pop();
-		assertThat("Did not return empty string", stack.toString(), is(equalTo("")));
+		assertThat("Stack not empty but should be", stack.isEmpty(), is(true));
 	}
 	
 }
