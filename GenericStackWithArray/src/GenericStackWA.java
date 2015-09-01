@@ -1,5 +1,5 @@
 
-public class GenericStackWA<E> {
+public class GenericStackWA <E> {
 	private E [] elements;
 	private int size = 0;
 	final int DEFAULT_CAPACITY = 50;
@@ -19,6 +19,10 @@ public class GenericStackWA<E> {
 		      elements = temp;
 		}
 		elements[size++] = value;
+	}
+	
+	E peek() {
+		return elements[size-1];
 	}
 	
 	E pop() {
