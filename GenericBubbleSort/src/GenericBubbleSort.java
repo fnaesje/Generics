@@ -1,6 +1,6 @@
 
-public class GenericBubbleSort <E extends Comparable> {
-	public void bubbleSort(E[] list) {
+public class GenericBubbleSort {
+	public static <E extends Comparable<E>>void bubbleSort(E[] list) {
 		boolean needNextPass = true;
 		for (int k = 1; k < list.length && needNextPass; k++) {
 		      // Array may be sorted and next pass not needed
